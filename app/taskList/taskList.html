@@ -5,8 +5,8 @@
     <p>It should return a lovely task list yo</p>
 
     <div class="list-group">
-      <div ng-repeat="t in products | limitTo: limit">
-          <a href="#" class="list-group-item" ng-click="open()">{{t.title}}</a>
+      <div ng-repeat="product in products | limitTo: limit">
+          <a href="#" class="list-group-item" ng-click="open()">{{product.title}}</a>
       </div>
     </div>
 
