@@ -2,6 +2,9 @@
 
 angular.module('modalExercise', [
   'ngRoute',
+  'ngTouch',
+  'ngAnimate',
+  'ui.bootstrap',
   'modalExercise.taskList',
   'modalExercise.version'
 ]).
