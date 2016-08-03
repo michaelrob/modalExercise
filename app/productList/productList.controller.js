@@ -8,7 +8,7 @@ angular.module('modalExercise.productList', ['ngRoute'])
     controller: 'productList.controller'
   });
 }])
-.constant('products',
+.constant('products', // this is not really idea, in a more interesting world we'd probably have this live in an external file. But this keeps everything simple despite being a pain to read.
   [{
     id: "1",
     title: "Product Title 1",
@@ -50,6 +50,30 @@ angular.module('modalExercise.productList', ['ngRoute'])
     title: "Product Title 7",
     description: "Bla bla Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image: "http://placehold.it/300x300&text=img_1"
+  },
+  {
+    id: "8",
+    title: "Product Title 8",
+    description: "Bla bla Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "http://placehold.it/300x300&text=img_1"
+  },
+  {
+    id: "9",
+    title: "Product Title 9",
+    description: "Bla bla Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "http://placehold.it/300x300&text=img_1"
+  },
+  {
+    id: "10",
+    title: "Product Title 10",
+    description: "Bla bla Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "http://placehold.it/300x300&text=img_1"
+  },
+  {
+    id: "11",
+    title: "Product Title 11",
+    description: "Bla bla Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "http://placehold.it/300x300&text=img_1"
   }]
 )
 .controller('productList.controller', ['$scope', 'products', '$uibModal', '$log', function($scope, products, $uibModal, $log) {
@@ -57,7 +81,7 @@ angular.module('modalExercise.productList', ['ngRoute'])
 
   $scope.limit = 5;
 
-  var limitStep = 3;
+  var limitStep = 5;
   $scope.incrementLimit = function() {
       $scope.limit += limitStep;
   };
@@ -84,6 +108,9 @@ angular.module('modalExercise.productList', ['ngRoute'])
 
   $scope.product = product;
   $scope.id = product.id;
+  $scope.title = product.title;
+  $scope.description = product.description;
+  $scope.image = product.image;
 
   $scope.close = function () {
     $uibModalInstance.dismiss('close');
