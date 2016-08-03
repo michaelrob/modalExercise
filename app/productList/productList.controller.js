@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('modalExercise.taskList', ['ngRoute'])
+angular.module('modalExercise.productList', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/taskList', {
-    templateUrl: 'taskList/taskList.html',
-    controller: 'taskList.controller'
+  $routeProvider.when('/productList', {
+    templateUrl: 'productList/productList.html',
+    controller: 'productList.controller'
   });
 }])
 .constant('products',
@@ -52,7 +52,7 @@ angular.module('modalExercise.taskList', ['ngRoute'])
     image: "http://placehold.it/300x300&text=img_1"
   }]
 )
-.controller('taskList.controller', ['$scope', 'products', '$uibModal', '$log', function($scope, products, $uibModal, $log) {
+.controller('productList.controller', ['$scope', 'products', '$uibModal', '$log', function($scope, products, $uibModal, $log) {
   $scope.products = products;
 
   $scope.limit = 5;

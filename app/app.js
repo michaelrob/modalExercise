@@ -5,11 +5,11 @@ angular.module('modalExercise', [
   'ngTouch',
   'ngAnimate',
   'ui.bootstrap',
-  'modalExercise.taskList',
+  'modalExercise.productList',
   'modalExercise.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/taskList'});
+  $routeProvider.otherwise({redirectTo: '/productList'});
 }]);
