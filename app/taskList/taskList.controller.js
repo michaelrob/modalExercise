@@ -52,7 +52,7 @@ angular.module('modalExercise.taskList', ['ngRoute'])
     image: "http://placehold.it/300x300&text=img_1"
   }]
 )
-.controller('taskList.controller', ['$scope', 'products', function($scope, products) {
+.controller('taskList.controller', ['$scope', 'products', '$uibModal', '$log', function($scope, products, $uibModal, $log) {
   $scope.products = products;
 
   $scope.limit = 5;
@@ -60,5 +60,32 @@ angular.module('modalExercise.taskList', ['ngRoute'])
   var limitStep = 3;
   $scope.incrementLimit = function() {
       $scope.limit += limitStep;
+  };
+
+  var product;
+  $scope.open = function (product) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'productModal.html',
+      controller: 'productModal.controller',
+      resolve: {
+        product: function () {
+          return product;
+        }
+      }
+    });
+  };
+
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+}])
+.controller('productModal.controller', ['$scope', '$uibModalInstance', 'product', function($scope, $uibModalInstance, product) {
+
+  $scope.product = product;
+  $scope.id = product.id;
+
+  $scope.close = function () {
+    $uibModalInstance.dismiss('close');
   };
 }]);
