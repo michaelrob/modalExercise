@@ -5,13 +5,13 @@
     <p>It should return a lovely task list yo</p>
 
     <div class="list-group">
-      <div ng-repeat="t in products">
+      <div ng-repeat="t in products | limitTo: limit">
           <a href="#" class="list-group-item">{{t.title}}</a>
       </div>
     </div>
 
     <br />
 
-    <button ng-click="" class="btn btn-default" type="submit">Load More</button>
+    <button ng-click="incrementLimit()" class="btn btn-default" type="submit">Load More</button>
   </div>
 </div>

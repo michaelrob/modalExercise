@@ -54,4 +54,11 @@ angular.module('modalExercise.taskList', ['ngRoute'])
 )
 .controller('taskList.controller', ['$scope', 'products', function($scope, products) {
   $scope.products = products;
+
+  $scope.limit = 5;
+
+  var limitStep = 3;
+  $scope.incrementLimit = function() {
+      $scope.limit += limitStep;
+  };
 }]);
